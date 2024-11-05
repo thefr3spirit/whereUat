@@ -1,11 +1,48 @@
+<?php
+include 'dbconnect.php';
+
+// Handling form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Capture and sanitize input data
+    $username = $conn->real_escape_string($_POST['username']);
+    $email = $conn->real_escape_string($_POST['email']);
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
+
+    // Validate if passwords match
+    if ($password !== $confirm_password) {
+        echo "<p style='color: red; text-align: center;'>Passwords do not match. Please try again.</p>";
+    } else {
+        // Hash the password
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+
+        // SQL query to insert data into users table
+        $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashed_password')";
+
+        // Execute the query
+        if ($conn->query($sql) === TRUE) {
+            // Redirect to home.php if signup is successful
+            header("Location: home.php");
+            exit();
+        } else {
+            // Show an error message if the signup fails
+            echo "<p style='color: red; text-align: center;'>Error: Invalid username or email. Please try again.</p>";
+        }
+    }
+
+    // Close the connection
+    $conn->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - whereUat</title>
-
     <style>
+        /* Style from your original code */
         body {
             background-color: rgb(97, 106, 122);
             color: rgb(24, 24, 24);
@@ -18,7 +55,6 @@
             margin-bottom: 20px;
         }
 
-        /* Styling for the form container and alignment */
         .form-container {
             display: inline-block;
             text-align: left;
@@ -29,7 +65,6 @@
             border-radius: 8px;
         }
 
-        /* Additional styles for inputs and buttons */
         input[type="text"],
         input[type="email"],
         input[type="password"] {
@@ -77,9 +112,8 @@
         <h1>Sign Up</h1>
     </header>
     <main>
-        <!-- Form Section with alignment container -->
         <div class="form-container">
-            <form action="profile.html" method="POST">
+            <form action="signup.php" method="POST">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
                 

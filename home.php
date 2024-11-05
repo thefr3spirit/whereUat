@@ -45,7 +45,7 @@
         }
 
         .full-background {
-            background-image: url('D:/Ran out/class projects/whereUat/bodybg.jpeg'); /* Path to your image */
+            background-image: url('images/bodybg.jpeg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -76,6 +76,7 @@
             height: 150px;
             margin: 10px;
             border: 1px solid #ccc;
+            border-radius: 8px;
         }
 
         .social-media {
@@ -96,11 +97,11 @@
 <body>
 
     <div class="top-bar">
-        <img src="D:/Ran out/class projects/whereUat/logo.jpeg" alt="WhereUat Logo" class="logo">
+        <img src="images/logo.jpeg" alt="WhereUat Logo" class="logo">
         whereUat
         <nav>
-            <a href="login.html"><button>Login</button></a>
-            <a href="signup.html"></a><button>Sign up</button></nav>
+            <a href="login.php"><button>Login</button></a>
+            <a href="signup.php"><button>Sign up</button></a>
         </nav>
     </div>
 
@@ -137,9 +138,9 @@
 
     <section class="team">
         <h2>Meet our team of committed developers and leaders</h2>
-        <img src="D:/Ran out/class projects/whereUat/teamM2.jpeg" alt="CEO">
-        <img src="D:/Ran out/class projects/whereUat/teamM3.jpeg" alt="Front-end Developer">
-        <img src="D:/Ran out/class projects/whereUat/teamM4.jpeg" alt="Back-end developer">
+        <img src="images/teamM2.jpeg" alt="CEO">
+        <img src="images/teamM3.jpeg" alt="Front-end Developer">
+        <img src="images/teamM4.jpeg" alt="Back-end developer">
     </section>
 
     <section class="contact">
@@ -147,14 +148,14 @@
         <p>Get engaged on our social platforms.</p>
 
         <div class="social-media">
-            <a href="https://facebook.com" target="_blank">
-                <img src="D:/Ran out/class projects/whereUat/fblogo.jpeg" alt="Facebook" class="social-icon">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/fblogo.jpeg" alt="Facebook" class="social-icon">
             </a>
-            <a href="https://twitter.com" target="_blank">
-                <img src="D:/Ran out/class projects/whereUat/Xlogo.jpeg" alt="Twitter" class="social-icon">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/Xlogo.jpeg" alt="Twitter" class="social-icon">
             </a>
-            <a href="https://instagram.com" target="_blank">
-                <img src="D:/Ran out/class projects/whereUat/iglogo.jpeg" alt="Instagram" class="social-icon">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/iglogo.jpeg" alt="Instagram" class="social-icon">
             </a>
         </div>
     </section>
