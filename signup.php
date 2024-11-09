@@ -1,5 +1,6 @@
 <?php
 include 'dbconnect.php';
+session_start();
 
 // Handling form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -21,8 +22,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Execute the query
         if ($conn->query($sql) === TRUE) {
-            // Redirect to home.php if signup is successful
-            header("Location: home.php");
+            // Set session variables
+            $_SESSION['username'] = $username;
+            $_SESSION['email'] = $email;
+
+            // Redirect to profile.php if signup is successful
+            header("Location: profile.php");
             exit();
         } else {
             // Show an error message if the signup fails

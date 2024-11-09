@@ -45,11 +45,41 @@
         }
 
         .full-background {
-            background-image: url('images/bodybg.jpeg');
+            background-image: url('images/home.jpg');
             background-size: cover;
             background-position: center;
             color: white;
             padding: 20px;
+        }
+
+        .settings { 
+            position: relative; 
+            display: inline-block; 
+        } 
+        .settings .settings-icon { 
+            font-size: 24px; 
+            cursor: pointer; 
+            color: #555; 
+            margin-left: 10px; 
+        } 
+        .dropdown-content {
+             display: none; 
+             position: absolute; 
+             right: 0; 
+             background-color: white; min-width: 160px; 
+             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); z-index: 1; 
+        } 
+        .dropdown-content a { 
+            color: black; 
+            padding: 12px 16px; 
+            text-decoration: none; 
+            display: block; 
+        } 
+        .dropdown-content a:hover { 
+            background-color: #f1f1f1; 
+        } 
+        .settings:hover .dropdown-content { 
+            display: block; 
         }
 
         h1 {
