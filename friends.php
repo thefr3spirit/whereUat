@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0FtZ84MK3EQhSBsGrChuOG8M0sRjbSGY&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=****************************************************" async defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Friends - whereUat</title>
